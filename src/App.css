@@ -1,0 +1,2342 @@
+/* Kymorix App Specific Styling */
+.tracking-tight {
+  letter-spacing: -0.5px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.hover-bg-body-secondary:hover {
+  background-color: var(--bs-secondary-bg) !important;
+}
+
+.min-w-0 {
+  min-width: 0;
+}
+
+/* Offcanvas custom background */
+.offcanvas-backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Fractional gap, margin & padding helper utilities */
+.gap-1\.5 {
+  gap: 0.375rem !important;
+}
+
+.gap-2\.5 {
+  gap: 0.625rem !important;
+}
+
+.mb-1\.5 {
+  margin-bottom: 0.375rem !important;
+}
+
+.mb-2\.5 {
+  margin-bottom: 0.75rem !important;
+}
+
+.mt-1\.5 {
+  margin-top: 0.375rem !important;
+}
+
+.mt-2\.5 {
+  margin-top: 0.75rem !important;
+}
+
+.my-1\.5 {
+  margin-top: 0.375rem !important;
+  margin-bottom: 0.375rem !important;
+}
+
+.py-0\.5 {
+  padding-top: 0.125rem !important;
+  padding-bottom: 0.125rem !important;
+}
+
+.py-1\.5 {
+  padding-top: 0.375rem !important;
+  padding-bottom: 0.375rem !important;
+}
+
+/* Priority Badges - Accessible High Contrast in Light & Dark Mode */
+.badge-priority-high {
+  background-color: rgba(239, 68, 68, 0.12) !important;
+  color: #dc2626 !important;
+  border-color: rgba(239, 68, 68, 0.28) !important;
+}
+
+.badge-priority-medium {
+  background-color: rgba(245, 158, 11, 0.14) !important;
+  color: #b45309 !important;
+  border-color: rgba(245, 158, 11, 0.32) !important;
+}
+
+.badge-priority-low {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  color: #15803d !important;
+  border-color: rgba(16, 185, 129, 0.28) !important;
+}
+
+[data-bs-theme="dark"] .badge-priority-high {
+  background-color: rgba(239, 68, 68, 0.2) !important;
+  color: #fca5a5 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+
+[data-bs-theme="dark"] .badge-priority-medium {
+  background-color: rgba(245, 158, 11, 0.2) !important;
+  color: #fcd34d !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+}
+
+[data-bs-theme="dark"] .badge-priority-low {
+  background-color: rgba(16, 185, 129, 0.2) !important;
+  color: #86efac !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+}
+
+.py-2\.5 {
+  padding-top: 0.625rem !important;
+  padding-bottom: 0.625rem !important;
+}
+
+.px-1\.5 {
+  padding-left: 0.375rem !important;
+  padding-right: 0.375rem !important;
+}
+
+.px-2\.5 {
+  padding-left: 0.625rem !important;
+  padding-right: 0.625rem !important;
+}
+
+.px-3\.5 {
+  padding-left: 0.875rem !important;
+  padding-right: 0.875rem !important;
+}
+
+/* ============================================================
+   Popup, Modal & Offcanvas Animations
+   ============================================================ */
+
+/* Modal Backdrop with Smooth Blur & Fade */
+.modal-animated-backdrop {
+  background-color: rgba(15, 23, 42, 0.52) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  animation: modalBackdropFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes modalBackdropFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Modal Dialog Scale & Slide-in */
+.modal-animated-dialog {
+  animation: modalDialogScaleIn 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes modalDialogScaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(14px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Modal Exit Animations */
+.modal-animated-backdrop.is-closing {
+  animation: modalBackdropFadeOut 0.18s cubic-bezier(0.4, 0, 1, 1) forwards !important;
+}
+
+@keyframes modalBackdropFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.modal-animated-dialog.is-closing {
+  animation: modalDialogScaleOut 0.18s cubic-bezier(0.4, 0, 1, 1) forwards !important;
+}
+
+@keyframes modalDialogScaleOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+}
+
+/* Smooth Icon Pulse on Dialog Open */
+@keyframes confirmIconBounce {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.confirm-icon-pulse {
+  animation: confirmIconBounce 0.32s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Delete Confirmation Button Effects */
+.confirm-btn-allow {
+  transition: transform 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease;
+}
+
+.confirm-btn-allow:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.confirm-btn-allow:active {
+  transform: scale(0.96);
+}
+
+.confirm-btn-cancel {
+  transition: transform 0.14s ease, background-color 0.14s ease;
+}
+
+.confirm-btn-cancel:active {
+  transform: scale(0.96);
+}
+
+/* Task Modal Action Buttons (Base / Desktop) */
+.task-modal-action-btn {
+  min-height: 38px;
+  min-width: 76px;
+}
+
+/* Mobile Offcanvas Drawer Animations */
+.offcanvas-animated-backdrop {
+  background-color: rgba(15, 23, 42, 0.48) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: modalBackdropFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.offcanvas-animated-drawer {
+  animation: offcanvasDrawerSlideIn 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+@keyframes offcanvasDrawerSlideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Pomodoro Floating Widget Slide-Up Animation & Layout */
+.pomodoro-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 350px;
+  max-width: calc(100vw - 32px);
+  z-index: 1060;
+  border-radius: 18px !important;
+  border: 1px solid var(--ff-border) !important;
+  background: var(--ff-surface) !important;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.08) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+[data-bs-theme="dark"] .pomodoro-widget {
+  background: rgba(17, 24, 39, 0.95) !important;
+  border-color: rgba(55, 65, 81, 0.8) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.55), 0 4px 16px rgba(0, 0, 0, 0.3) !important;
+}
+
+.pomodoro-widget-animated {
+  animation: pomodoroSlideUpIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+/* ============================================================
+   Floating Mini Pomodoro Timer Popup
+   ============================================================ */
+.pomodoro-mini-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1060;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px 5px 10px;
+  background: var(--ff-surface);
+  border: 1px solid var(--ff-border);
+  border-radius: 9999px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+[data-bs-theme="dark"] .pomodoro-mini-widget {
+  background: rgba(17, 24, 39, 0.95);
+  border-color: rgba(55, 65, 81, 0.85);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55), 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pomodoro-mini-animated {
+  animation: miniTimerPop 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes miniTimerPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(12px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.pomo-mini-mode-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2.5px 7px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.pomo-mini-mode-badge.focus {
+  background: rgba(239, 68, 68, 0.12);
+  color: #ef4444;
+}
+
+.pomo-mini-mode-badge.shortBreak {
+  background: rgba(16, 185, 129, 0.12);
+  color: #10b981;
+}
+
+.pomo-mini-mode-badge.longBreak {
+  background: rgba(99, 102, 241, 0.12);
+  color: #6366f1;
+}
+
+.pomo-mini-live-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: currentColor;
+  animation: pomoDotPulse 1.4s infinite ease-in-out;
+}
+
+@keyframes pomoDotPulse {
+  0%, 100% {
+    transform: scale(0.9);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+}
+
+.pomo-mini-time {
+  font-family: var(--ff-font), monospace;
+  font-size: 0.94rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--ff-text);
+  cursor: pointer;
+  padding: 0 4px;
+  transition: color 0.15s ease;
+}
+
+.pomo-mini-time:hover {
+  color: var(--ff-primary);
+}
+
+.pomo-mini-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ff-border);
+  background: var(--ff-surface-hover);
+  color: var(--ff-text);
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+}
+
+.pomo-mini-btn:hover {
+  background: var(--ff-primary);
+  color: #ffffff;
+  border-color: var(--ff-primary);
+  transform: scale(1.08);
+}
+
+.pomo-mini-btn-play {
+  background: #10b981 !important;
+  color: #ffffff !important;
+  border-color: #10b981 !important;
+}
+
+.pomo-mini-btn-pause {
+  background: #f59e0b !important;
+  color: #ffffff !important;
+  border-color: #f59e0b !important;
+}
+
+.pomo-mini-btn-close {
+  color: var(--ff-text-dim);
+  border: none;
+  background: transparent;
+}
+
+.pomo-mini-btn-close:hover {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #ef4444 !important;
+  border-color: transparent !important;
+}
+
+@keyframes pomodoroSlideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(32px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.pomodoro-header {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ff-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pomo-header-btn {
+  background: transparent;
+  border: none;
+  color: var(--ff-text-muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+
+.pomo-header-btn:hover {
+  color: var(--ff-text);
+  background: var(--ff-surface-hover);
+  transform: rotate(-45deg);
+}
+
+/* Mode Segmented Pill Tabs */
+.pomo-tabs-pill-wrap {
+  display: flex;
+  background: var(--ff-surface-hover);
+  border-radius: 12px;
+  padding: 4px;
+  gap: 4px;
+  border: 1px solid var(--ff-border);
+}
+
+[data-bs-theme="dark"] .pomo-tabs-pill-wrap {
+  background: rgba(31, 41, 55, 0.6);
+  border-color: rgba(55, 65, 81, 0.6);
+}
+
+.pomo-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 8px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-radius: 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--ff-text-muted);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.pomo-tab-btn:hover:not(.active) {
+  color: var(--ff-text);
+  background: rgba(0, 0, 0, 0.04);
+}
+
+[data-bs-theme="dark"] .pomo-tab-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.pomo-tab-btn.active.mode-focus {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(239, 68, 68, 0.35);
+}
+
+.pomo-tab-btn.active.mode-shortBreak {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.35);
+}
+
+.pomo-tab-btn.active.mode-longBreak {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+  color: #ffffff;
+  box-shadow: 0 3px 10px rgba(79, 70, 229, 0.35);
+}
+
+/* Timer Display Area */
+.pomo-timer-display {
+  padding: 14px 0 8px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pomo-digits {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -1.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--ff-text);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.pomo-digits.is-running {
+  text-shadow: 0 0 20px rgba(239, 68, 68, 0.18);
+}
+
+[data-bs-theme="dark"] .pomo-digits.is-running {
+  text-shadow: 0 0 24px rgba(239, 68, 68, 0.35);
+}
+
+.pomo-status-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 999px;
+  margin-top: 6px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.pomo-status-chip.running {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+
+.pomo-status-chip.paused {
+  background: rgba(100, 116, 139, 0.1);
+  color: var(--ff-text-muted);
+  border-color: rgba(100, 116, 139, 0.2);
+}
+
+.pomo-pulse-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pomoDotPulse 1.6s infinite;
+}
+
+@keyframes pomoDotPulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 5px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+/* Progress Track */
+.pomo-progress-track {
+  width: 100%;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.06);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 10px 0 16px 0;
+}
+
+[data-bs-theme="dark"] .pomo-progress-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pomo-progress-bar {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Focus Target Card */
+.pomo-target-card {
+  background: var(--ff-surface-hover);
+  border: 1px solid var(--ff-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-align: left;
+  transition: border-color 0.15s ease;
+}
+
+[data-bs-theme="dark"] .pomo-target-card {
+  background: rgba(31, 41, 55, 0.5);
+  border-color: rgba(55, 65, 81, 0.7);
+}
+
+.pomo-target-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--ff-text-muted);
+}
+
+.pomo-task-badge {
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.pomo-target-select {
+  border-radius: 8px !important;
+  border: 1px solid var(--ff-border) !important;
+  background-color: var(--ff-surface) !important;
+  font-size: 0.8rem !important;
+  font-weight: 500 !important;
+  height: 35px !important;
+  padding: 4px 10px !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.pomo-target-select:focus {
+  border-color: var(--ff-primary) !important;
+  box-shadow: 0 0 0 3px var(--ff-primary-glow) !important;
+}
+
+/* Action Control Buttons */
+.pomo-btn-primary {
+  flex: 1;
+  height: 40px;
+  border-radius: 10px !important;
+  font-size: 0.86rem !important;
+  font-weight: 700 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none !important;
+  color: #ffffff !important;
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%) !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28) !important;
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.pomo-btn-primary.mode-focus {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%) !important;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.28) !important;
+}
+
+.pomo-btn-primary.mode-shortBreak {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%) !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.28) !important;
+}
+
+.pomo-btn-primary.mode-longBreak {
+  background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%) !important;
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.28) !important;
+}
+
+.pomo-btn-primary.pomo-btn-pause {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%) !important;
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3) !important;
+}
+
+.pomo-btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+}
+
+.pomo-btn-primary:active {
+  transform: scale(0.97) !important;
+}
+
+.pomo-btn-secondary {
+  height: 40px;
+  padding: 0 16px !important;
+  border-radius: 10px !important;
+  font-size: 0.84rem !important;
+  font-weight: 600 !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--ff-border) !important;
+  background: var(--ff-surface) !important;
+  color: var(--ff-text-muted) !important;
+  transition: all 0.15s ease !important;
+}
+
+.pomo-btn-secondary:hover {
+  background: var(--ff-surface-hover) !important;
+  color: var(--ff-text) !important;
+  border-color: var(--ff-border-hover) !important;
+}
+
+.pomo-btn-secondary:active {
+  transform: scale(0.97) !important;
+}
+
+.pomo-footer {
+  font-size: 0.72rem;
+  color: var(--ff-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* ============================================================
+   Task Card Interaction Animations
+   ============================================================ */
+
+/* Task Entry Animation */
+.task-card-enter {
+  animation: taskCardEnterAnim 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes taskCardEnterAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Task Deletion Animation (Collapse & Slide Out) */
+.task-card-deleting {
+  animation: taskCardDeleteAnim 0.24s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+@keyframes taskCardDeleteAnim {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    max-height: 250px;
+    margin-bottom: 1rem;
+  }
+  40% {
+    opacity: 0.3;
+    transform: translateX(-24px) scale(0.97);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.92);
+    max-height: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-width: 0;
+  }
+}
+
+/* Checkmark Pop Scale Animation on Task Completion */
+.btn-check-pop {
+  animation: checkPopAnim 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.35) forwards;
+}
+
+@keyframes checkPopAnim {
+  0% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.28);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Completed Card subtle transition */
+.is-completed-card {
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+/* ============================================================
+   Toast Notification Styling & Animations
+   ============================================================ */
+
+.toast-card-custom {
+  background: rgba(255, 255, 255, 0.94);
+  color: #0f172a;
+  border: 1px solid rgba(226, 232, 240, 0.8) !important;
+  box-shadow: 0 12px 36px rgba(15, 23, 42, 0.12), 0 2px 8px rgba(15, 23, 42, 0.06) !important;
+}
+
+[data-bs-theme="dark"] .toast-card-custom {
+  background: rgba(17, 24, 39, 0.94);
+  color: #f9fafb;
+  border: 1px solid rgba(55, 65, 81, 0.8) !important;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45) !important;
+}
+
+.toast-animated {
+  animation: toastSlideUpIn 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.toast-closing {
+  animation: toastSlideDownOut 0.22s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes toastSlideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(28px) scale(0.92);
+  }
+  75% {
+    transform: translateY(-3px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastSlideDownOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.94);
+  }
+}
+
+/* Toast Progress Countdown Animation */
+.toast-progress-track {
+  height: 3.5px;
+  width: 100%;
+  background: rgba(148, 163, 184, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+[data-bs-theme="dark"] .toast-progress-track {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.toast-progress-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left center;
+  will-change: width;
+}
+
+@keyframes toastCountdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* Unique Icon Animations */
+.toast-icon-success {
+  animation: iconSuccessPop 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.35) forwards;
+}
+
+@keyframes iconSuccessPop {
+  0% {
+    transform: scale(0.2) rotate(-25deg);
+    opacity: 0;
+  }
+  65% {
+    transform: scale(1.22) rotate(4deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.toast-icon-danger {
+  animation: iconAlertShake 0.45s ease-in-out forwards;
+}
+
+@keyframes iconAlertShake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  20%, 60% {
+    transform: translateX(-4px);
+  }
+  40%, 80% {
+    transform: translateX(4px);
+  }
+}
+
+.toast-icon-warning {
+  animation: iconWarningPulse 0.4s ease-out forwards;
+}
+
+@keyframes iconWarningPulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toast-icon-export {
+  animation: iconExportBounce 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.25) forwards;
+}
+
+@keyframes iconExportBounce {
+  0% {
+    transform: translateY(-6px);
+    opacity: 0.3;
+  }
+  60% {
+    transform: translateY(3px);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.toast-icon-print {
+  animation: iconPrintSlide 0.35s ease-out forwards;
+}
+
+@keyframes iconPrintSlide {
+  0% {
+    transform: scale(0.8) translateY(-4px);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   Interactive Button & Element Feedback
+   ============================================================ */
+
+.btn {
+  transition: transform 0.12s ease, box-shadow 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:active {
+  transform: scale(0.97) !important;
+}
+
+.header-btn,
+.header-btn-icon,
+.header-google-btn {
+  transition: transform 0.12s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.header-btn:active,
+.header-btn-icon:active,
+.header-google-btn:active {
+  transform: scale(0.95) !important;
+}
+
+/* Search bar pulse effect on wrapper when triggered via '/' */
+.search-highlight-pulse {
+  animation: searchBarPulse 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes searchBarPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+    border-color: var(--ff-primary);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(79, 70, 229, 0.22);
+    border-color: var(--ff-primary);
+  }
+  100% {
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+    border-color: var(--ff-primary);
+  }
+}
+
+/* ============================================================
+   Reduced-Motion Accessibility Support
+   Respects user's OS reduced-motion preferences
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Allow toast countdown to smoothly indicate dismissal time */
+  .toast-progress-fill {
+    animation-duration: inherit !important;
+  }
+}
+
+/* ============================================================
+   MOBILE-FIRST RESPONSIVE DESIGN SYSTEM
+   Optimized for small screens (320px - 576px), tablets & desktops
+   ============================================================ */
+
+/* 1. Mobile Floating Action Button (FAB) */
+.mobile-fab {
+  bottom: 20px;
+  right: 18px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1040;
+  border: none !important;
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.45) !important;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
+}
+
+.mobile-fab:active {
+  transform: scale(0.92) !important;
+}
+
+@media (min-width: 992px) {
+  .mobile-fab {
+    display: none !important;
+  }
+}
+
+@media print {
+  .mobile-fab {
+    display: none !important;
+  }
+}
+
+/* 2. Toast Notification Responsive Sizing & Styling */
+.toast-card-custom {
+  min-width: 320px;
+  max-width: 430px;
+  background: var(--ff-surface) !important;
+  color: var(--ff-text) !important;
+}
+
+/* Toast Progress Bar Track & Fill */
+.toast-progress-track {
+  width: 100%;
+  height: 3px;
+  background: rgba(148, 163, 184, 0.2);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.toast-progress-fill {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+}
+
+@keyframes toastCountdown {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Toast Entrance & Exit Animations */
+.toast-animated {
+  animation: toastSlideUp 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-closing {
+  animation: toastSlideDown 0.22s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+  pointer-events: none;
+}
+
+@keyframes toastSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes toastSlideDown {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+}
+
+/* Toast Theme Subtle Accent Borders */
+.toast-theme-success {
+  border-left: 4px solid #10b981 !important;
+}
+
+.toast-theme-danger {
+  border-left: 4px solid #ef4444 !important;
+}
+
+.toast-theme-warning {
+  border-left: 4px solid #f59e0b !important;
+}
+
+.toast-theme-info {
+  border-left: 4px solid #4f46e5 !important;
+}
+
+.toast-theme-export {
+  border-left: 4px solid #0ea5e9 !important;
+}
+
+.toast-theme-print {
+  border-left: 4px solid #8b5cf6 !important;
+}
+
+/* Quick-Add Bar Base Styling */
+.quick-add-card {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.quick-add-card .quick-add-icon {
+  color: var(--ff-primary);
+}
+
+.quick-add-card .quick-add-icon i {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.quick-add-input {
+  font-size: 0.86rem;
+  color: var(--ff-text) !important;
+}
+
+.quick-add-input::placeholder {
+  font-size: 0.86rem;
+  color: var(--ff-text-dim);
+}
+
+.quick-add-btn {
+  font-size: 0.8rem;
+  padding: 0.35rem 0.85rem;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 576px) {
+  /* Compact App Shell & Layout Margins */
+  .app-shell {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+  }
+
+  .app-shell > .row {
+    --bs-gutter-x: 0.5rem !important;
+    --bs-gutter-y: 0.5rem !important;
+  }
+
+  .toast-container-mobile {
+    left: 8px !important;
+    right: 8px !important;
+    bottom: 12px !important;
+    padding: 0 !important;
+    width: auto !important;
+    pointer-events: none !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .toast-container-mobile > * {
+    pointer-events: auto !important;
+  }
+
+  .toast-card-custom {
+    min-width: 0 !important;
+    max-width: 310px !important;
+    width: auto !important;
+    margin: 0 auto !important;
+    border-radius: 9px !important;
+  }
+}
+
+/* 3. Pomodoro Floating Widget on Mobile Screens */
+@media (max-width: 576px) {
+  .pomodoro-widget {
+    bottom: 8px !important;
+    left: 8px !important;
+    right: 8px !important;
+    width: calc(100vw - 16px) !important;
+    max-width: 310px !important;
+    margin: 0 auto !important;
+    border-radius: 12px !important;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.38) !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .pomodoro-header {
+    padding: 6px 10px !important;
+  }
+
+  .pomodoro-header span {
+    font-size: 0.78rem !important;
+  }
+
+  .pomodoro-header .rounded-circle {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
+  .pomodoro-header .rounded-circle i {
+    font-size: 0.68rem !important;
+  }
+
+  .pomo-header-btn {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .pomo-header-btn i {
+    font-size: 0.72rem !important;
+  }
+
+  .pomodoro-widget > .p-3 {
+    padding: 6px 8px 8px 8px !important;
+  }
+
+  .pomo-tabs-pill-wrap {
+    padding: 2px !important;
+    gap: 2px !important;
+    border-radius: 8px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .pomo-tab-btn {
+    padding: 3px 4px !important;
+    font-size: 0.65rem !important;
+    border-radius: 6px !important;
+    gap: 2.5px !important;
+  }
+
+  .pomo-timer-display {
+    padding: 2px 0 !important;
+  }
+
+  .pomo-digits {
+    font-size: clamp(1.45rem, 5.5vw, 1.75rem) !important;
+    letter-spacing: -0.5px !important;
+  }
+
+  .pomo-status-chip {
+    font-size: 0.58rem !important;
+    padding: 1px 6px !important;
+    margin-top: 1px !important;
+  }
+
+  .pomo-progress-track {
+    margin: 4px 0 6px 0 !important;
+    height: 3px !important;
+  }
+
+  .pomo-target-card {
+    padding: 4px 6px !important;
+    border-radius: 7px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .pomo-target-label {
+    font-size: 0.58rem !important;
+  }
+
+  .pomo-task-badge {
+    font-size: 0.58rem !important;
+    padding: 1px 4px !important;
+  }
+
+  select.pomo-target-select,
+  .pomo-target-select {
+    height: 25px !important;
+    font-size: 0.68rem !important;
+    padding: 1px 5px !important;
+    border-radius: 5px !important;
+    text-overflow: ellipsis !important;
+  }
+
+  .pomodoro-widget .d-flex.justify-content-center.gap-2 {
+    gap: 4px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .pomo-btn-primary {
+    height: 28px !important;
+    font-size: 0.72rem !important;
+    border-radius: 6px !important;
+    gap: 4px !important;
+    padding: 0 9px !important;
+  }
+
+  .pomo-btn-primary i {
+    font-size: 0.75rem !important;
+  }
+
+  .pomo-btn-secondary {
+    height: 28px !important;
+    font-size: 0.72rem !important;
+    padding: 0 8px !important;
+    border-radius: 6px !important;
+    gap: 3px !important;
+  }
+
+  .pomo-btn-secondary i {
+    font-size: 0.75rem !important;
+  }
+
+  .pomo-footer {
+    font-size: 0.62rem !important;
+    gap: 3px !important;
+  }
+
+  /* Floating Mini Timer Popup on Mobile Screens */
+  .pomodoro-mini-widget {
+    bottom: 16px !important;
+    left: 12px !important;
+    right: auto !important;
+    padding: 3.5px 6px 3.5px 8px !important;
+    gap: 6px !important;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45) !important;
+  }
+
+  .pomo-mini-mode-badge {
+    padding: 2px 5px !important;
+    font-size: 0.64rem !important;
+  }
+
+  .pomo-mini-time {
+    font-size: 0.86rem !important;
+    padding: 0 2px !important;
+  }
+
+  .pomo-mini-btn {
+    width: 23px !important;
+    height: 23px !important;
+    font-size: 0.68rem !important;
+  }
+}
+
+/* 4. Modal Popups on Mobile Devices */
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.35rem auto !important;
+    max-width: calc(100vw - 0.7rem) !important;
+    width: calc(100vw - 0.7rem) !important;
+  }
+
+  .modal-content {
+    border-radius: 12px !important;
+  }
+
+  .modal-header {
+    padding: 0.65rem 0.85rem !important;
+  }
+
+  .modal-title {
+    font-size: 0.95rem !important;
+  }
+
+  .modal-body {
+    padding: 0.75rem 0.85rem !important;
+    max-height: calc(88vh - 100px) !important;
+    overflow-y: auto !important;
+  }
+
+  .modal-body .form-label {
+    font-size: 0.76rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .modal-body .mb-3 {
+    margin-bottom: 0.6rem !important;
+  }
+
+  .modal-footer {
+    padding: 0.55rem 0.85rem !important;
+  }
+
+  .modal-footer .btn {
+    padding: 5px 12px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Prevent iOS automatic page zoom on focus by ensuring form inputs have legible size */
+  input[type="text"]:not(.quick-add-input):not(.task-title-input),
+  input[type="search"]:not(.header-search-input),
+  input[type="email"],
+  input[type="password"],
+  input[type="date"],
+  input[type="time"],
+  input[type="number"],
+  textarea:not(.task-desc-textarea),
+  select:not(.task-sort-select):not(.pomo-target-select) {
+    font-size: 16px !important;
+  }
+}
+
+/* 4b. Compact Create/Edit Productivity Task Form on Mobile */
+@media (max-width: 576px) {
+  .task-modal-dialog {
+    margin: 0.25rem auto !important;
+    max-width: calc(100vw - 0.5rem) !important;
+    width: calc(100vw - 0.5rem) !important;
+  }
+
+  .task-modal-form .task-modal-header {
+    padding: 0.45rem 0.75rem !important;
+  }
+
+  .task-modal-form .task-modal-header .modal-title {
+    font-size: 0.88rem !important;
+  }
+
+  .task-modal-form .task-modal-body {
+    padding: 0.45rem 0.65rem !important;
+    max-height: calc(88vh - 75px) !important;
+  }
+
+  /* Compact form labels */
+  .task-modal-form .form-label {
+    font-size: 0.68rem !important;
+    margin-bottom: 2px !important;
+    letter-spacing: 0.025em;
+  }
+
+  /* Tighter section vertical spacing */
+  .task-modal-form .mb-3 {
+    margin-bottom: 0.35rem !important;
+  }
+
+  .task-modal-form .row.g-2 {
+    --bs-gutter-y: 0.3rem !important;
+    --bs-gutter-x: 0.4rem !important;
+  }
+
+  /* Task title input */
+  .task-modal-form .task-title-input {
+    font-size: 0.88rem !important;
+    padding: 0.28rem 0.55rem !important;
+    min-height: 32px !important;
+    height: 32px !important;
+    border-radius: 6px !important;
+  }
+
+  /* Shorter description textarea */
+  .task-modal-form .task-desc-textarea {
+    font-size: 0.82rem !important;
+    padding: 0.25rem 0.55rem !important;
+    min-height: 44px !important;
+    max-height: 52px !important;
+    height: 46px !important;
+    line-height: 1.3 !important;
+    resize: none !important;
+    border-radius: 6px !important;
+  }
+
+  /* Compact Priority buttons */
+  .task-modal-form .btn-group .btn {
+    padding: 0.22rem 0.35rem !important;
+    font-size: 0.74rem !important;
+    line-height: 1.25 !important;
+  }
+
+  /* Compact Category select, Due Date, Due Time, and Pomodoros inputs */
+  .task-modal-form select.form-select,
+  .task-modal-form input[type="date"],
+  .task-modal-form input[type="time"],
+  .task-modal-form input[type="number"],
+  .task-modal-form .input-group-text {
+    padding: 0.25rem 0.45rem !important;
+    font-size: 0.8rem !important;
+    min-height: 31px !important;
+    height: 31px !important;
+  }
+
+  /* Quick date buttons (Today / Tmrw) */
+  .task-modal-form .input-group .btn-sm {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.72rem !important;
+    min-height: 31px !important;
+  }
+
+  /* Checklist and Tags inputs & buttons */
+  .task-modal-form .input-group {
+    margin-bottom: 0.3rem !important;
+  }
+
+  .task-modal-form .input-group input.form-control {
+    font-size: 0.82rem !important;
+    padding: 0.25rem 0.5rem !important;
+    min-height: 31px !important;
+    height: 31px !important;
+  }
+
+  .task-modal-form .task-modal-action-btn {
+    min-height: 31px !important;
+    height: 31px !important;
+    min-width: 52px !important;
+    padding: 0.2rem 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Subtask list items compact */
+  .task-modal-form .list-group-item {
+    padding: 0.2rem 0.4rem !important;
+  }
+
+  .task-modal-form .list-group-item input[type="text"] {
+    font-size: 0.78rem !important;
+  }
+
+  .task-modal-form .list-group-item .form-check-input {
+    width: 14px !important;
+    height: 14px !important;
+    margin-top: 0 !important;
+  }
+
+  /* Tags badge pills */
+  .task-modal-form .badge {
+    font-size: 0.68rem !important;
+    padding: 0.18rem 0.4rem !important;
+  }
+
+  /* Footer compact */
+  .task-modal-form .task-modal-footer {
+    padding: 0.35rem 0.65rem !important;
+  }
+
+  .task-modal-form .task-modal-footer .btn {
+    padding: 0.3rem 0.75rem !important;
+    font-size: 0.8rem !important;
+    min-height: 33px !important;
+  }
+}
+
+/* 5. Mobile Header & Search Bar Adjustments */
+@media (max-width: 576px) {
+  .site-header {
+    min-height: 48px !important;
+    height: 48px !important;
+  }
+
+  .site-header .container-fluid {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .site-header .navbar-brand {
+    font-size: 0.95rem !important;
+  }
+
+  .site-header .navbar-brand img {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .header-search-wrap {
+    height: 32px !important;
+    padding: 0 8px !important;
+    gap: 5px !important;
+    border-radius: 8px !important;
+  }
+
+  .header-btn {
+    height: 32px !important;
+    padding: 0 8px !important;
+    font-size: 0.76rem !important;
+    border-radius: 6px !important;
+  }
+
+  .header-btn-icon {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 6px !important;
+  }
+
+  .header-btn-icon svg {
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  .header-google-btn {
+    height: 32px !important;
+    padding: 0 8px !important;
+    font-size: 0.76rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* Dropdown menus safe bounds on mobile */
+  .dropdown-menu {
+    max-width: calc(100vw - 16px) !important;
+    font-size: 0.82rem !important;
+  }
+
+  .dropdown-item {
+    padding: 6px 10px !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Offcanvas animated drawer menu on mobile */
+  .offcanvas-animated-drawer {
+    width: 285px !important;
+    max-width: 85vw !important;
+    padding: 12px 14px 28px 14px !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Seamless Sidebar inside Mobile Drawer: Remove redundant nested card border and constraining h-100 */
+  .offcanvas-animated-drawer .modern-card {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    padding: 0 !important;
+    height: auto !important;
+    min-height: min-content !important;
+    border-radius: 0 !important;
+  }
+
+  .offcanvas-animated-drawer .sidebar-nav-item,
+  .offcanvas-animated-drawer button.sidebar-nav-item {
+    padding: 6px 8px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 1px !important;
+    border-radius: 6px !important;
+  }
+
+  .offcanvas-animated-drawer .sidebar-section-header {
+    font-size: 0.62rem !important;
+    margin-bottom: 4px !important;
+    padding: 0 6px !important;
+  }
+
+  .offcanvas-animated-drawer .sidebar-count-badge {
+    font-size: 0.65rem !important;
+    padding: 1px 6px !important;
+  }
+
+  .offcanvas-animated-drawer .btn-primary {
+    padding: 6px 12px !important;
+    font-size: 0.8rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .offcanvas-animated-drawer .sidebar-footer-actions {
+    margin-top: 14px !important;
+    padding-top: 12px !important;
+    padding-bottom: 24px !important;
+  }
+
+  .offcanvas-animated-drawer .sidebar-replay-btn {
+    margin-top: 4px !important;
+    padding: 6px 8px !important;
+    border-radius: 6px !important;
+    color: var(--ff-text-muted) !important;
+  }
+
+  .offcanvas-animated-drawer .sidebar-replay-btn:hover {
+    color: var(--ff-text) !important;
+    background-color: var(--ff-surface-hover) !important;
+  }
+}
+
+/* Base KPI Indicator Bar & Empty Tasks Card */
+.kpi-indicator-bar {
+  height: 3px;
+  background-color: var(--ff-surface-hover);
+  border-radius: 9999px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.kpi-indicator-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.empty-tasks-card {
+  border-radius: 12px;
+}
+
+.empty-tasks-icon-wrap {
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+}
+
+.empty-tasks-title {
+  font-size: 1.25rem;
+}
+
+.empty-tasks-desc {
+  max-width: 400px;
+}
+
+.create-task-btn {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* 6. Dashboard KPI Cards & Task List on Mobile */
+@media (max-width: 576px) {
+  .app-shell > .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .app-shell > .row > .col-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 100% !important;
+  }
+
+  .stats-dashboard-grid {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 6px !important;
+    --bs-gutter-y: 0.35rem !important;
+  }
+
+  .stats-dashboard-grid > .col-6:nth-child(odd) {
+    padding-left: 0 !important;
+    padding-right: 3px !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .stats-dashboard-grid > .col-6:nth-child(even) {
+    padding-left: 3px !important;
+    padding-right: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  .row.g-2.g-sm-3 {
+    --bs-gutter-x: 0.35rem !important;
+    --bs-gutter-y: 0.35rem !important;
+    margin-bottom: 5px !important;
+  }
+
+  .kpi-card {
+    padding: 5px 8px !important;
+    border-radius: 8px !important;
+    height: 100% !important;
+    min-height: 52px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .kpi-card .d-flex.justify-content-between {
+    margin-bottom: 1px !important;
+  }
+
+  .kpi-card .sidebar-section-header,
+  .kpi-card .kpi-label {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .kpi-card .fs-5 {
+    font-size: 0.95rem !important;
+  }
+
+  .kpi-card .small,
+  .kpi-card .kpi-subtext {
+    font-size: 0.62rem !important;
+  }
+
+  .kpi-card .d-flex.align-items-baseline {
+    margin-bottom: 0 !important;
+    gap: 4px !important;
+  }
+
+  .kpi-icon-pill {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 5px !important;
+  }
+
+  .kpi-icon-pill svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .kpi-card .progress {
+    height: 2px !important;
+    margin-top: 3px !important;
+  }
+
+  .kpi-indicator-bar {
+    height: 2px !important;
+    margin-top: 3px !important;
+    background-color: var(--ff-surface-hover) !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    width: 100% !important;
+  }
+
+  .kpi-indicator-fill {
+    height: 100% !important;
+    border-radius: 9999px !important;
+  }
+
+  /* Hide verbose repetitive third-line helper text on mobile to keep KPI grid slim and compact */
+  .kpi-card > div.text-secondary.small.text-truncate,
+  .kpi-card > div.small.fw-semibold.text-truncate,
+  .kpi-card > div.text-danger.small.fw-medium {
+    display: none !important;
+  }
+
+  /* Empty Tasks Section on Mobile */
+  .empty-tasks-card {
+    padding: 22px 14px 20px 14px !important;
+    margin-top: 6px !important;
+    margin-bottom: 14px !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+  }
+
+  .empty-tasks-icon-wrap {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.25rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .empty-tasks-title {
+    font-size: 0.92rem !important;
+    margin-bottom: 4px !important;
+  }
+
+  .empty-tasks-desc {
+    font-size: 0.75rem !important;
+    line-height: 1.38 !important;
+    max-width: 280px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .empty-tasks-actions {
+    gap: 8px !important;
+  }
+
+  .create-task-btn {
+    font-size: 0.8rem !important;
+    padding: 7px 18px !important;
+    min-height: 36px !important;
+    border-radius: 9999px !important;
+  }
+
+  .auth-hero-card {
+    padding: 1.1rem 0.75rem !important;
+    border-radius: 12px !important;
+  }
+
+  .auth-hero-card h2 {
+    font-size: 1.15rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+
+  .auth-hero-card p {
+    font-size: 0.78rem !important;
+    margin-bottom: 0.65rem !important;
+  }
+
+  .hero-feature-tile {
+    padding: 7px 5px !important;
+    border-radius: 8px !important;
+  }
+
+  .hero-feature-icon {
+    width: 26px !important;
+    height: 26px !important;
+    margin-bottom: 3px !important;
+  }
+
+  .hero-feature-icon svg {
+    width: 13px !important;
+    height: 13px !important;
+  }
+
+  /* Main task list container bottom clearance so scrolling is completely clear of Pomodoro widget and FAB */
+  .task-list-main-wrap {
+    padding-bottom: 230px !important;
+  }
+
+  /* Task Header & Sorting controls */
+  .task-header-row {
+    margin-bottom: 5px !important;
+    padding-bottom: 4px !important;
+    gap: 5px !important;
+  }
+
+  .task-header-title {
+    font-size: 0.98rem !important;
+  }
+
+  .task-header-row .badge {
+    font-size: 0.65rem !important;
+    padding: 1.5px 5px !important;
+  }
+
+  .task-sort-wrap {
+    gap: 4px !important;
+  }
+
+  .task-sort-select {
+    width: 92px !important;
+    height: 26px !important;
+    font-size: 0.7rem !important;
+    padding-top: 1px !important;
+    padding-bottom: 1px !important;
+    padding-left: 5px !important;
+    padding-right: 16px !important;
+    border-radius: 5px !important;
+  }
+
+  .task-sort-btn {
+    width: 26px !important;
+    height: 26px !important;
+    padding: 0 !important;
+    border-radius: 5px !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Quick-Add Bar */
+  .quick-add-form {
+    margin-bottom: 5px !important;
+  }
+
+  .quick-add-card {
+    padding: 2.5px 6px !important;
+    border-radius: 8px !important;
+    gap: 4px !important;
+  }
+
+  .quick-add-card .quick-add-icon {
+    padding-left: 2px !important;
+  }
+
+  .quick-add-card .quick-add-icon i,
+  .quick-add-icon i.bi {
+    font-size: 0.78rem !important;
+    line-height: 1 !important;
+  }
+
+  input[type="text"].quick-add-input,
+  .quick-add-input {
+    font-size: 0.74rem !important;
+    padding: 1px 3px !important;
+    height: 24px !important;
+  }
+
+  .quick-add-input::placeholder {
+    font-size: 0.74rem !important;
+    opacity: 0.75 !important;
+  }
+
+  .quick-add-btn {
+    height: 24px !important;
+    padding: 0 8px !important;
+    font-size: 0.7rem !important;
+    border-radius: 5px !important;
+  }
+
+  /* Compact Task Cards */
+  .task-list-main-wrap .modern-card {
+    margin-bottom: 5px !important;
+    border-radius: 8px !important;
+  }
+
+  .task-card-body {
+    padding: 6px 7px !important;
+  }
+
+  .task-card-body > .d-flex {
+    gap: 5px !important;
+  }
+
+  /* Fix Checkbox Alignment */
+  .task-select-wrap {
+    width: 16px !important;
+    min-width: 16px !important;
+    padding-top: 1px !important;
+    margin: 0 !important;
+  }
+
+  .task-select-wrap .form-check-input {
+    float: none !important;
+    margin: 0 !important;
+    width: 14px !important;
+    height: 14px !important;
+  }
+
+  /* Complete Toggle Check Button */
+  .task-complete-btn {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    margin-top: 0 !important;
+  }
+
+  .task-complete-btn svg {
+    width: 9px !important;
+    height: 9px !important;
+  }
+
+  /* Badges Row - Clean, compact wrapping and spacing */
+  .task-badges-row {
+    gap: 2.5px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .task-badge {
+    font-size: 0.6rem !important;
+    padding: 1px 4.5px !important;
+    line-height: 1.2 !important;
+    border-radius: 4px !important;
+  }
+
+  /* Task Title - Clear, readable, compact */
+  .task-title-text {
+    font-size: 0.85rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1px !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .task-card-body p.small {
+    font-size: 0.72rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .task-card-body .badge.bg-body-secondary {
+    font-size: 0.6rem !important;
+    padding: 1px 4px !important;
+  }
+
+  /* Subtasks / Checklist on Mobile */
+  .task-card-body .cursor-pointer {
+    font-size: 0.7rem !important;
+    margin-bottom: 2px !important;
+  }
+
+  .task-card-body .progress {
+    height: 2.5px !important;
+  }
+
+  .task-card-body .border-start {
+    margin-top: 3px !important;
+    padding-left: 5px !important;
+  }
+
+  .task-card-body .border-start .form-check {
+    margin-bottom: 1.5px !important;
+    font-size: 0.72rem !important;
+  }
+
+  .task-card-body .border-start .form-check-input {
+    width: 12px !important;
+    height: 12px !important;
+  }
+
+  /* Action Buttons on Mobile */
+  .task-actions-row {
+    gap: 2px !important;
+    margin-left: auto !important;
+  }
+
+  .task-action-icon-btn {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+  }
+
+  .task-action-icon-btn svg {
+    width: 11px !important;
+    height: 11px !important;
+  }
+
+  .task-focus-btn {
+    padding: 1px 5px !important;
+    font-size: 0.62rem !important;
+    height: 24px !important;
+    border-radius: 5px !important;
+  }
+
+  /* Mobile Floating Action Button (FAB) */
+  .mobile-fab {
+    width: 46px !important;
+    height: 46px !important;
+    border-radius: 50% !important;
+    bottom: 16px !important;
+    right: 14px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .mobile-fab i {
+    font-size: 1.25rem !important;
+    line-height: 1 !important;
+  }
+}
+
+/* ============================================================
+   INTERACTIVE ONBOARDING TUTORIAL
+   Spotlight overlay, popover positioning & smooth animations
+   ============================================================ */
+
+.onboarding-tutorial-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: 1090;
+  pointer-events: none;
+}
+
+.onboarding-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  z-index: 1091;
+  pointer-events: auto;
+  animation: onboardingFadeIn 0.25s ease-out forwards;
+}
+
+.onboarding-spotlight-box {
+  position: fixed;
+  border-radius: 12px;
+  box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.72), 0 0 0 3px #4f46e5, 0 0 25px rgba(79, 70, 229, 0.55);
+  z-index: 1092;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: spotlightPulse 2s infinite ease-in-out;
+}
+
+@keyframes spotlightPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.72), 0 0 0 3px #4f46e5, 0 0 20px rgba(79, 70, 229, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 9999px rgba(15, 23, 42, 0.72), 0 0 0 4px #6366f1, 0 0 28px rgba(99, 102, 241, 0.65);
+  }
+}
+
+.onboarding-card {
+  background-color: var(--ff-surface) !important;
+  color: var(--ff-text) !important;
+  pointer-events: auto;
+  animation: onboardingCardPop 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  border: 1px solid rgba(148, 163, 184, 0.25) !important;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.08) !important;
+  transition: top 0.25s ease, left 0.25s ease, bottom 0.25s ease;
+  box-sizing: border-box !important;
+  max-height: calc(100vh - 36px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.onboarding-card-body {
+  overflow-y: auto !important;
+  max-height: calc(100vh - 160px) !important;
+}
+
+/* Centered Placement (Step 1, Step 6, or Fallback) without any transform conflicts */
+.onboarding-card.placement-center {
+  position: fixed !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  left: 16px !important;
+  right: 16px !important;
+  margin: auto !important;
+  height: fit-content !important;
+  width: auto !important;
+  max-width: calc(100vw - 32px) !important;
+}
+
+@media (min-width: 577px) {
+  .onboarding-card.placement-center {
+    left: 0 !important;
+    right: 0 !important;
+    width: 420px !important;
+    max-width: 420px !important;
+  }
+}
+
+/* Specific Mobile View Tutorial Rules (<= 576px) */
+@media (max-width: 576px) {
+  .onboarding-card {
+    position: fixed !important;
+    left: 16px !important;
+    right: 16px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: auto !important;
+    max-width: calc(100vw - 32px) !important;
+    max-height: calc(100vh - 32px) !important;
+  }
+}
+
+[data-bs-theme="dark"] .onboarding-card {
+  background-color: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.65) !important;
+}
+
+.onboarding-card-header {
+  background-color: rgba(148, 163, 184, 0.05);
+}
+
+.onboarding-card-footer {
+  background-color: rgba(148, 163, 184, 0.05);
+}
+
+.onboarding-step-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background-color: rgba(148, 163, 184, 0.35);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.onboarding-step-dot.active {
+  width: 18px;
+  border-radius: 9999px;
+  background-color: #4f46e5;
+  box-shadow: 0 0 8px rgba(79, 70, 229, 0.6);
+}
+
+.onboarding-step-dot.completed {
+  background-color: rgba(79, 70, 229, 0.5);
+}
+
+@keyframes onboardingFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes onboardingCardPop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
